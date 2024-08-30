@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <title>Cálculo de Jubilación por parte del Estado de Guatemala</title>
+</head>
+<body>
+    <!-- <header class="header"></header> -->
+    <main class="main">
+        <section class="block_formulario" id="seccionFormulario">
+            <div class="titulo_formulario">
+                <h2>Jubilación por parte del Estado de Guatemala</h2>
+            </div>
+            <div class="descripcion">
+                <p>
+                    A continuación se le solicitan una serie de datos, favor de ingresar los mismos con la mayor exactitud posible. 
+                    Recuerde ingresar el promedio de sus sueldos nominales (salario base más el total de bonos afectos). Esta 
+                    información se encuentra en los recibos de pago mensual que le fueron extendidos por el la unidad de recursos 
+                    humanos de las instituciones en las que ha laborado o labora actualmente. 
+                </p>
+                <br>
+                <hr>
+                <br>
+                <p>
+                    <b>Condición para aplicar a Jubilación:</b> Es un derecho que adquiere el trabajador que ha prestado sus 
+                    servicios por <i>10 años como mínimo y que haya cumplido 50 años de edad</i> o <i>acreditar 20 años de servicio, 
+                    como mínimo, no importando la edad.</i>  Recuerda que para realizar esta consulta debes de tener como minimo 24 años de edad.
+                </p>
+                <br>
+                <hr>
+            </div>
+            <div class="form-container">
+                <form id="jubilacionForm">
+                    <!-- Fila 1: Nombre Completo -->
+                    <div class="form-row">
+                        <label for="nombreCompleto">Nombre Completo</label>
+                        <input type="text" id="nombreCompleto" name="nombreCompleto" placeholder="Ingrese su nombre completo" required>
+                    </div>
+            
+                    <!-- Fila 2: NIT y DPI -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nit">NIT</label>
+                            <input type="text" id="nit" name="nit" placeholder="Ingrese su NIT" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="dpi">DPI</label>
+                            <input type="text" id="dpi" name="dpi" placeholder="Ingrese su DPI" required>
+                        </div>
+                    </div>
+            
+                    <!-- Fila 3: Entidad de Gobierno -->
+                    <div class="form-row">
+                        <label for="entidadGobierno">Entidad de Gobierno</label>
+                        <input type="text" id="entidadGobierno" name="entidadGobierno" placeholder="Ingrese la entidad de gobierno" required>
+                    </div>
+            
+                    <!-- Fila 4: Fecha de Nacimiento, Dirección y Edad -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fechaNacimiento">Fecha de Nacimiento</label>
+                            <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="direccion">Dirección</label>
+                            <input type="text" id="direccion" name="direccion" placeholder="Ingrese su dirección" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="edad">Edad</label>
+                            <input type="number" id="edad" name="edad" placeholder="Ingrese su edad" readonly required>
+                        </div>
+                    </div>
+                    <p id="elementoNotaEdad14anios" style="display: none;">
+                        <b>Nota:</b> La edad minima para trabajar en una entidad del gobierno es de 14 años. Por lo que la persona que esta 
+                        realizando esta consulta debe de tener 24 años o más.
+                    </p>
+            
+                    <!-- Fila 5: Años Laborados y Meses -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="añosLaborados">Años Laborados</label>
+                            <select id="añosLaborados" name="añosLaborados" required>
+                                <option value="" disabled selected>Seleccione</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="mesesLaborados">Meses Laborados</label>
+                            <select id="mesesLaborados" name="mesesLaborados" required>
+                                <option value="00">00</option>
+                            </select>
+                        </div>
+                    </div>
+            
+                    <!-- Fila 6: Promedio Mensual por Año -->
+                     <div class="form-row">
+                        <div class="descripcon2">
+                            <p>
+                                Por favor ingrese el sueldo promedio mensual que ha percibido usted en los últimos 5 años, 
+                                exprese las cantidades únicamente en números, no utilice comas para separar miles. Recuerde 
+                                que para el cálculo de su pensión se requiere calcular el promedio percibido en los últimos 
+                                60 meses, lo que equivale a 5 años.
+                            </p>
+                        </div>
+                     </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="promedio1">Promedio Mensual 1er Año</label>
+                            <input type="number" id="promedio1" name="promedio1" placeholder="Ingrese el promedio" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="promedio2">Promedio Mensual 2do Año</label>
+                            <input type="number" id="promedio2" name="promedio2" placeholder="Ingrese el promedio" required>
+                        </div>
+                    </div>
+
+                    <!-- Fila 7: Promedio Mensual 3er, 4to y 5to Año -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="promedio3">Promedio Mensual 3er Año</label>
+                            <input type="number" id="promedio3" name="promedio3" placeholder="Ingrese el promedio" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="promedio4">Promedio Mensual 4to Año</label>
+                            <input type="number" id="promedio4" name="promedio4" placeholder="Ingrese el promedio" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="promedio5">Promedio Mensual 5to Año</label>
+                            <input type="number" id="promedio5" name="promedio5" placeholder="Ingrese el promedio" required>
+                        </div>
+                    </div>
+            
+                    <!-- Botón de Enviar -->
+                    <div class="form-row">
+                        <button type="submit">Enviar Datos</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section class="tabla_informativa" id="tabla_informativaId" style="display: none;">
+            <div class="table-container">
+                <table>
+                    <thead class="table-header">
+                        <tr>
+                            <th rowspan="4">Nombre Completo</th>
+                            <th rowspan="4">NIT</th>
+                            <th rowspan="4">DPI</th>
+                        </tr>
+                        <tbody>
+                            <td id="nombreCompletoId"></td>
+                            <td id="nitId"></td>
+                            <td id="dpiId"></td>
+                        </tbody>
+                        <tr>
+                            <th rowspan="4">Entidad de Gobierno</th>
+                            <th rowspan="4">Dirección</th>
+                            <th rowspan="4">Años Laborados</th>
+                        </tr>
+                        <tbody>
+                            <td id="entidadGobiernoId"></td>
+                            <td id="direccionId"></td>
+                            <td id="aniosLaboradosId"></td>
+                        </tbody>
+                        <tr>
+                            <th colspan="1">Fecha de Nacimiento</th>
+                            <th colspan="1">Edad</th>
+                            <th colspan="1">Aplica</th>
+                        </tr>
+                        <tbody>
+                            <td id="fechaNacimientoId"></td>
+                            <td id="edadId"></td>
+                            <td id="aplicaId"></td>
+                        </tbody>
+                        <tr>
+                            <th colspan="3">Cálculo del Promedio</th>
+                        </tr>
+                        <tbody>
+                            <td id="calculoPromedioId"></td>
+                        </tbody>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="9">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Concepto</th>
+                                            <th>Cálculo</th>
+                                            <th>Monto en Quetzales</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Porcentaje promedio conforme escala</td>
+                                            <td id="porcentajePromedioConformeId"></td>
+                                            <td id="porcentajePromedioConformeMonto"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Adición Dto 81-95</td>
+                                            <td id="adicionDto81-95"></td>
+                                            <td id="adicionDto81-95Monto"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>10% de Incremento Decreto 37-97</td>
+                                            <td id="10%deIncrementoDecreto37-97"></td>
+                                            <td id="10%deIncrementoDecreto37-97Monto"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Bono acuerdo 907 - 97</td>
+                                            <td id="bonoAcuerdo907-97"></td>
+                                            <td id="bonoAcuerdo907-97Monto"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Bono acuerdo 954 - 98</td>
+                                            <td id="bonoAcuerdo954-98"></td>
+                                            <td id="bonoAcuerdo954-98Monto"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Bono marzo 2000</td>
+                                            <td id="bonoMarzo2000"></td>
+                                            <td id="bonoMarzo2000Monto"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Bono mayo 2000</td>
+                                            <td id="bonoMayo2000"></td>
+                                            <td id="bonoMayo2000Monto"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Bono agosto 2001</td>
+                                            <td id="bonoAgosto2001"></td>
+                                            <td id="bonoAgosto2001Monto"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Bono julio 2008</td>
+                                            <td id="bonoJulio2008"></td>
+                                            <td id="bonoJulio2008Monto"></td>
+                                        </tr>
+                                        <tr class="total-row">
+                                            <td>Total sumatoria</td>
+                                            <td></td>
+                                            <td id="totalSumatoria"></td>
+                                        </tr>
+                                        <tr class="total-row">
+                                            <td>Total a Recibir</td>
+                                            <td></td>
+                                            <td id="totalRecibir"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p id="notaMontoMaximo" style="display: none;">
+                    <b>Nota:</b> Actualmente el Régimen de Clases Pasivas establece una pensión máxima de Q5,370.00, cantidad 
+                    que usted ha alcanzado o superado, por lo que la pensión que percibirá es la máxima.
+                </p>
+                <!-- Botón para ingresar un nuevo registro -->
+                <div class="button-nueva-consulta">
+                    <button id="resetButton">Nueva consulta</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer"></footer>
+    
+    <script src="js/calculo_edad.js"></script>
+    <script src="js/calculo_jubilacion.js"></script>
+    <script src="js/resetPagina.js"></script>
+</body>
+</html>

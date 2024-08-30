@@ -1,0 +1,219 @@
+/* Reset y estilos base */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: white;
+    font-family: sans-serif;
+}
+
+.header{
+    width: 100%;
+    height: 10vh;
+    background-color: white;
+    box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.2);
+    position:relative;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrar el formulario horizontalmente */
+    align-items: center;
+    background-color: white;
+    width: 100%;
+    min-height: 100vh; /* Altura mínima para cubrir la pantalla */
+    padding: 20px; /* Espacio alrededor del contenido */
+    background-color: white;
+}
+
+.block_formulario{
+    display: flex;
+    flex-direction: column; /* Coloca el título y el formulario en columna */
+    background-color: rgb(255, 255, 255);
+    max-width: 100%; /* Máximo ancho del formulario */
+    width: 90%;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden; /* Esconder cualquier desbordamiento */
+    box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgb(17, 108, 194);
+}
+
+.titulo_formulario{
+    background-color: rgb(17, 108, 194);
+    text-align: center;
+    font-size: 15px;
+    padding: 20px;
+    color: white;
+    border: 1px solid rgb(17, 108, 194);
+}
+
+.descripcion{
+    padding: 20px;
+    text-align: justify;
+}
+
+.form-container {
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row {
+    margin-bottom: 15px;
+    display: flex; 
+    flex-wrap: wrap; 
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    flex: 1;
+    min-width: 48%;
+    margin-right: 10px;
+}
+
+.form-group:last-child {
+    margin-right: 0;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.descripcon2{
+    /* padding: 20px; */
+    text-align: justify;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #fff;
+}
+
+button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .form-group {
+        min-width: 100%; /* Los campos se extienden en pantallas pequeñas */
+        margin-right: 0;
+    }
+
+    .form-row {
+        flex-direction: column; /* Cambiar a disposición en columna */
+    }
+}
+
+/* Estilos adicionales para la tabla */
+
+/* #tabla_informativaId {
+    display: none;
+} */
+
+.tabla_informativa{
+    max-width: 100%;
+    width: 90%;
+}
+.table-container {
+    /* max-width: 100%; */
+    /* margin: 20px; */
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgb(17, 108, 194);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    padding: 8px; /* Reducir el padding para ajustar la altura */
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px; /* Ajustar el tamaño de fuente para reducir altura */
+}
+
+th {
+    background-color: rgb(17, 108, 194);
+    color: white;
+    font-weight: bold;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+.total-row {
+    font-weight: bold;
+    background-color: #e2e2e2;
+}
+
+.total-row td {
+    border-bottom: 2px solid #333;
+}
+
+/* Estilos para ajustar la altura de las celdas del encabezado */
+.table-header th {
+    padding: 10px;
+}
+
+/* Ajustes para la tabla interna */
+table > tbody > tr > td {
+    padding: 8px; /* Reducir padding en la tabla interna */
+}
+
+table > tbody > tr > td > table {
+    margin: 0; /* Eliminar márgenes internos en la tabla interna */
+}
+
+#notaMontoMaximo{
+    text-align: justify;
+}
+
+#resetButton{
+ margin-top: 10px;   
+}
+
